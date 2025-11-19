@@ -1,27 +1,7 @@
-import instagramLogo from "@/assets/footer/instagram.svg";
-import facebookLogo from "@/assets/footer/facebook.svg";
-import linkedinLogo from "@/assets/footer/linkedin.svg";
-import styles from "./Footer.module.scss";
 import Image from "next/image";
-
-const socialsData = [
-  {
-    name: "Instagram",
-    image: instagramLogo,
-    link: "https://www.instagram.com",
-  },
-  {
-    name: "Facebook",
-    image: facebookLogo,
-    link: "https://www.facebook.com",
-  },
-
-  {
-    name: "Linkedin",
-    image: linkedinLogo,
-    link: "https://www.linkedin.com",
-  },
-];
+import Link from "next/link";
+import { socialsData } from "@/data/socialsData";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
@@ -29,14 +9,18 @@ const Footer = () => {
       <div className={styles.footerContent}>
         <div className={styles.socials}>
           {socialsData.map((social) => (
-            <a
-              href="https://www.google.com"
+            <Link
+              href={social.link}
               target="_blank"
               rel="noopener noreferrer"
               key={social.name}
             >
-              <Image src={social.image} alt={social.name} className={styles.icon} />
-            </a>
+              <Image
+                src={social.image}
+                alt={social.name}
+                className={styles.icon}
+              />
+            </Link>
           ))}
         </div>
 

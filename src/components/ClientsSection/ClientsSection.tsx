@@ -1,18 +1,10 @@
 "use client";
 
-import { useRef, useLayoutEffect } from "react";
 import Image from "next/image";
+import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
-import client1Logo from "@/assets/clients/company-1.svg";
-import client2Logo from "@/assets/clients/company-2.svg";
-import client3Logo from "@/assets/clients/company-3.svg";
+import { clientsData } from "@/data/clientsData";
 import styles from "./ClientsSection.module.scss";
-
-const clientsData = [
-  { id: 1, name: "Client 1", image: client1Logo },
-  { id: 2, name: "Client 2", image: client2Logo },
-  { id: 3, name: "Client 3", image: client3Logo },
-];
 
 const ClientsSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
