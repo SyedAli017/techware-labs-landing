@@ -43,12 +43,12 @@ const HeroSection = () => {
   useEffect(() => {
     const handleMove = (e: MouseEvent) => {
       setPos({
-        x: (e.clientX - window.innerWidth / 2) / 100,
-        y: (e.clientY - window.innerHeight / 2) / 100,
+        x: (e.clientX - globalThis.innerWidth / 2) / 100,
+        y: (e.clientY - globalThis.innerHeight / 2) / 100,
       });
     };
-    window.addEventListener("mousemove", handleMove);
-    return () => window.removeEventListener("mousemove", handleMove);
+    globalThis.addEventListener("mousemove", handleMove);
+    return () => globalThis.removeEventListener("mousemove", handleMove);
   }, []);
 
   return (
@@ -66,11 +66,11 @@ const HeroSection = () => {
 
         {circles.map((c, i) => (
           <motion.div
-            key={i}
+            key={`${c.size}-${c.opacity}-${i}`}
             className={styles.circle}
             style={{
-              width: c.size,
-              height: c.size,
+              width: `calc(${c.size}px * var(--circle-scale))`,
+              height: `calc(${c.size}px * var(--circle-scale))`,
               background: c.gradient,
               opacity: c.opacity,
             }}
@@ -100,10 +100,23 @@ const HeroSection = () => {
 
       <div className={styles.heroContent}>
         <div className={styles.textContent}>
-          <motion.h1 className={styles.heroTitle} {...fadeUp(0)}>
-            Smarter Solutions Powered by AI
+          <motion.h1 className={styles.heroTitle}>
+            {"Smarter Solutions Powered by AI".split(" ").map((word, i) => (
+              <motion.span
+                key={word + i}
+                style={{ display: "inline-block", marginRight: "10px" }}
+                {...fadeUp(i * 0.1)}
+              >
+                {word}
+              </motion.span>
+            ))}
           </motion.h1>
-          <motion.p className={styles.heroDesc} {...fadeUp(0.15)}>
+          <motion.p
+            className={styles.heroDesc}
+            {...fadeUp(
+              0.15 + "Smarter Solutions Powered by AI".split(" ").length * 0.1
+            )}
+          >
             Streamline operations, reduce costs, and scale effortlessly with our
             AI-driven tools.
           </motion.p>

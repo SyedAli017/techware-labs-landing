@@ -2,12 +2,13 @@
 
 .scrollReveal {
   width: 100%;
-  max-width: 1000px;
+  max-width: $max-width;
   height: 100svh;
   max-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 20px;
 
   .scrollRevealText {
     color: $grey;
@@ -16,5 +17,14 @@
     line-height: 45px;
     letter-spacing: -1%;
     
+    @media only screen and (max-width: $tablet-l) {
+      font-size: 32px;
+      line-height: 38px;
+    }
+
+    @media only screen and (max-width: $mobile-l) {
+      font-size: 24px;
+      line-height: 30px;
+    }
   }
 }

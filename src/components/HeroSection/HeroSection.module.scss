@@ -11,6 +11,10 @@
   position: relative;
   overflow: hidden;
 
+  @media only screen and (max-width: $tablet-l) {
+    height: 90svh;
+  }
+
   .heroContent {
     display: flex;
     flex-direction: column;
@@ -20,11 +24,34 @@
     max-width: 900px;
     margin-bottom: 150px;
 
+    @media only screen and (max-width: $desktop-s) {
+      max-width: 800px;
+    }
+    @media only screen and (max-width: $tablet-l) {
+      margin-bottom: 100px;
+      max-width: 700px;
+      gap: 20px;
+    }
+
+    @media only screen and (max-width: $mobile-l) {
+      margin-bottom: 0px;
+      padding: 0px 20px;
+      gap: 20px;
+    }
+
     .textContent {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 20px;
+
+      @media only screen and (max-width: $mobile-l) {
+        gap: 15px;
+      }
+
+      @media only screen and (max-width: $tablet-l) {
+        gap: 15px;
+      }
 
       .heroTitle {
         color: $white;
@@ -33,6 +60,21 @@
         line-height: 65px;
         letter-spacing: -1%;
         text-align: center;
+
+        @media only screen and (max-width: $tablet-l) {
+          font-size: 60px;
+          line-height: 60px;
+        }
+
+        @media only screen and (max-width: $tablet-s) {
+          font-size: 50px;
+          line-height: 50px;
+        }
+
+        @media only screen and (max-width: $mobile-l) {
+          font-size: 40px;
+          line-height: 40px;
+        }
       }
 
       .heroDesc {
@@ -42,6 +84,16 @@
         line-height: 25px;
         letter-spacing: 0%;
         text-align: center;
+
+        @media only screen and (max-width: $tablet-l) {
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        @media only screen and (max-width: $mobile-l) {
+          font-size: 14px;
+          line-height: 22px;
+        }
       }
     }
 
@@ -76,6 +128,20 @@
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.25),
           0 0 15px rgba(110, 0, 207, 0.35), 0 0 15px rgba(50, 0, 95, 0.25);
       }
+
+      @media only screen and (max-width: $tablet-l) {
+        max-width: 180px;
+        min-height: 55px;
+        padding: 15px 25px;
+        font-size: 16px;
+      }
+
+      @media only screen and (max-width: $mobile-l) {
+        max-width: 170px;
+        min-height: 50px;
+        padding: 18px 28px;
+        font-size: 14px;
+      }
     }
   }
 
@@ -84,6 +150,15 @@
     height: 100%;
     position: absolute;
     pointer-events: none;
+    --circle-scale: 1;
+
+    @media only screen and (max-width: $tablet-l) {
+      --circle-scale: 0.8;
+    }
+
+    @media only screen and (max-width: $mobile-l) {
+      --circle-scale: 0.55;
+    }
 
     .glowBg {
       position: absolute;
@@ -93,6 +168,19 @@
       height: 520px;
       transform: translate(-50%, -50%);
       pointer-events: none;
+
+      @media only screen and (max-width: $tablet-l) {
+        left: 30%;
+        width: 400px;
+        height: 400px;
+      }
+
+      @media only screen and (max-width: $mobile-l) {
+        top: 80%;
+        left: 25%;
+        width: 300px;
+        height: 300px;
+      }
       background: radial-gradient(
         ellipse at center,
         rgba(255, 255, 255, 0.9) 0%,
@@ -101,7 +189,7 @@
         rgba(255, 255, 255, 0) 100%
       );
       filter: blur(35px);
-      opacity: 1; 
+      opacity: 1;
       z-index: 100;
     }
 
@@ -113,6 +201,14 @@
       left: 50%;
       transform: translate(-50%, -50%);
       filter: blur(1px);
+
+      @media only screen and (max-width: $tablet-l) {
+        top: 130%;
+      }
+
+      @media only screen and (max-width: $mobile-l) {
+        top: 120%;
+      }
     }
   }
 }
@@ -121,10 +217,10 @@
   0%,
   100% {
     opacity: 0.45;
-    filter: blur(34px);
+    filter: blur(35px);
   }
   50% {
     opacity: 0.7;
-    filter: blur(40px);
+    filter: blur(45px);
   }
 }

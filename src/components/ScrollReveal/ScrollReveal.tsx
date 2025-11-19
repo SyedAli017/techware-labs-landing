@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import useFadeIn from "@/hooks/useFadeIn";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import styles from "./ScrollReveal.module.scss";
@@ -9,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ScrollReveal = () => {
   const textRef = useRef<HTMLParagraphElement>(null);
+  const ref = useFadeIn();
 
   useEffect(() => {
     const split = new SplitType(textRef.current!, { types: "chars" });
@@ -39,7 +41,7 @@ const ScrollReveal = () => {
   }, []);
 
   return (
-    <div className={styles.scrollReveal}>
+    <div ref={ref} className={styles.scrollReveal}>
       <p ref={textRef} className={styles.scrollRevealText}>
         We build cutting-edge AI solutions that help businesses automate
         processes, gain insights, and deliver smarter experiences. Whether
