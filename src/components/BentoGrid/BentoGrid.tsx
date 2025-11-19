@@ -1,11 +1,14 @@
 "use client";
 import Image from "next/image";
+import useFadeIn from "@/hooks/useFadeIn";
 import { bentoItems } from "@/data/bentoItems";
 import styles from "./BentoGrid.module.scss";
 
 const BentoGrid = () => {
+  const ref = useFadeIn();
+
   return (
-    <div className={styles.bentoGrid}>
+    <div ref={ref} className={styles.bentoGrid}>
       <div className={styles.gridSection}>
         {bentoItems.map((item) => (
           <div
