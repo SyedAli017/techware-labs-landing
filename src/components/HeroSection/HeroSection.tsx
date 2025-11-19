@@ -100,10 +100,23 @@ const HeroSection = () => {
 
       <div className={styles.heroContent}>
         <div className={styles.textContent}>
-          <motion.h1 className={styles.heroTitle} {...fadeUp(0)}>
-            Smarter Solutions Powered by AI
+          <motion.h1 className={styles.heroTitle}>
+            {"Smarter Solutions Powered by AI".split(" ").map((word, i) => (
+              <motion.span
+                key={word + i}
+                style={{ display: "inline-block", marginRight: "10px" }}
+                {...fadeUp(i * 0.1)}
+              >
+                {word}
+              </motion.span>
+            ))}
           </motion.h1>
-          <motion.p className={styles.heroDesc} {...fadeUp(0.15)}>
+          <motion.p
+            className={styles.heroDesc}
+            {...fadeUp(
+              0.15 + "Smarter Solutions Powered by AI".split(" ").length * 0.1
+            )}
+          >
             Streamline operations, reduce costs, and scale effortlessly with our
             AI-driven tools.
           </motion.p>

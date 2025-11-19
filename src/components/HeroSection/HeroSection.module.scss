@@ -24,20 +24,19 @@
     max-width: 900px;
     margin-bottom: 150px;
 
-    @media only screen and (max-width: $mobile-l) {
-      margin-bottom: 0px;
-      padding: 0px 20px;
-      gap: 20px;
+    @media only screen and (max-width: $desktop-s) {
+      max-width: 800px;
     }
-
     @media only screen and (max-width: $tablet-l) {
       margin-bottom: 100px;
       max-width: 700px;
       gap: 20px;
     }
 
-    @media only screen and (max-width: $desktop-s) {
-      max-width: 800px;
+    @media only screen and (max-width: $mobile-l) {
+      margin-bottom: 0px;
+      padding: 0px 20px;
+      gap: 20px;
     }
 
     .textContent {
@@ -62,19 +61,19 @@
         letter-spacing: -1%;
         text-align: center;
 
-        @media only screen and (max-width: $mobile-l) {
-          font-size: 40px;
-          line-height: 45px;
-        }
-
-        @media only screen and (max-width: $tablet-s) {
-          font-size: 36px;
-          line-height: 40px;
-        }
-
         @media only screen and (max-width: $tablet-l) {
           font-size: 60px;
           line-height: 60px;
+        }
+
+        @media only screen and (max-width: $tablet-s) {
+          font-size: 50px;
+          line-height: 50px;
+        }
+
+        @media only screen and (max-width: $mobile-l) {
+          font-size: 40px;
+          line-height: 40px;
         }
       }
 
@@ -86,14 +85,14 @@
         letter-spacing: 0%;
         text-align: center;
 
-        @media only screen and (max-width: $mobile-l) {
+        @media only screen and (max-width: $tablet-l) {
           font-size: 16px;
-          line-height: 22px;
+          line-height: 24px;
         }
 
-        @media only screen and (max-width: $tablet-l) {
-          font-size: 17px;
-          line-height: 24px;
+        @media only screen and (max-width: $mobile-l) {
+          font-size: 14px;
+          line-height: 22px;
         }
       }
     }
@@ -130,14 +129,14 @@
           0 0 15px rgba(110, 0, 207, 0.35), 0 0 15px rgba(50, 0, 95, 0.25);
       }
 
-      @media only screen and (max-width: $mobile-l) {
+      @media only screen and (max-width: $tablet-l) {
         max-width: 180px;
         min-height: 55px;
         padding: 15px 25px;
         font-size: 16px;
       }
 
-      @media only screen and (max-width: $tablet-l) {
+      @media only screen and (max-width: $mobile-l) {
         max-width: 170px;
         min-height: 50px;
         padding: 18px 28px;
@@ -190,7 +189,7 @@
         rgba(255, 255, 255, 0) 100%
       );
       filter: blur(35px);
-      opacity: 1; 
+      opacity: 1;
       z-index: 100;
     }
 
