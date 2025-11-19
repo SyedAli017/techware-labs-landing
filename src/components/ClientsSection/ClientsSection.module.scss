@@ -6,6 +6,14 @@
   background: $dark-grey-bg;
   overflow: hidden;
 
+  @media only screen and (max-width: $tablet-l) {
+    padding: 20px 0;
+  }
+
+  @media only screen and (max-width: $mobile-l) {
+    padding: 15px 0;
+  }
+
   .sliderWrapper {
     width: 100%;
     overflow: hidden;
@@ -22,11 +30,27 @@
     align-items: center;
     justify-content: center;
     padding: 0 55px;
+
+    @media only screen and (max-width: $tablet-l) {
+      padding: 0 40px;
+    }
+
+    @media only screen and (max-width: $mobile-l) {
+      padding: 0 25px;
+    }
   }
 
   .clientImage {
     max-width: 130px;
     max-height: 35px;
     object-fit: contain;
+
+    @media only screen and (max-width: $tablet-l) {
+      max-width: 100px;
+    }
+
+    @media only screen and (max-width: $mobile-l) {
+      max-width: 80px;
+    }
   }
 }
