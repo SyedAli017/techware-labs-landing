@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import rightArrow from "@/assets/hero-section/right-arrow.svg";
+import { motion } from "framer-motion";
+import { fadeUp } from "@/utils/framer";
 import styles from "./HeroSection.module.scss";
 
 const HeroSection = () => {
@@ -7,18 +11,20 @@ const HeroSection = () => {
     <section className={styles.heroSection}>
       <div className={styles.heroContent}>
         <div className={styles.textContent}>
-          <h1 className={styles.heroTitle}>Smarter Solutions Powered by AI</h1>
+          <motion.h1 className={styles.heroTitle} {...fadeUp(0)}>
+            Smarter Solutions Powered by AI
+          </motion.h1>
 
-          <p className={styles.heroDesc}>
+          <motion.p className={styles.heroDesc} {...fadeUp(0.15)}>
             Streamline operations, reduce costs, and scale effortlessly with our
             AI-driven tools.
-          </p>
+          </motion.p>
         </div>
 
-        <button className={styles.ctaBtn}>
+        <motion.button className={styles.ctaBtn} {...fadeUp(0.3)}>
           Start a Project
           <Image src={rightArrow} alt="" />
-        </button>
+        </motion.button>
       </div>
     </section>
   );
