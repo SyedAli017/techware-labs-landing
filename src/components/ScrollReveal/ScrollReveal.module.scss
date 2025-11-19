@@ -1,0 +1,20 @@
+@use "@/styles/abstract/variables" as *;
+
+.scrollReveal {
+  width: 100%;
+  max-width: 1000px;
+  height: 100svh;
+  max-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .scrollRevealText {
+    color: $grey;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 45px;
+    letter-spacing: -1%;
+    
+  }
+}
