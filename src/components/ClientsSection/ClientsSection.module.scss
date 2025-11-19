@@ -1,0 +1,17 @@
+@use "@/styles/abstract/variables" as *;
+
+.clientsSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  background: $dark-grey-bg;
+
+  width: 100%;
+
+  .clients {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+  }
+}
