@@ -12,27 +12,27 @@ const HeroSection = () => {
 
   const circles = [
     {
-      size: 350,
+      size: 650,
       gradient: "linear-gradient(93.64deg, #d0a8f2 2.99%, #32005f 110.75%)",
       opacity: 0.9,
     },
     {
-      size: 500,
+      size: 800,
       gradient: "linear-gradient(93.64deg, #b27ce2 2.99%, #32005f 110.75%)",
       opacity: 0.7,
     },
     {
-      size: 650,
+      size: 950,
       gradient: "linear-gradient(93.64deg, #a54ef1 2.99%, #32005f 110.75%)",
       opacity: 0.6,
     },
     {
-      size: 800,
+      size: 1100,
       gradient: "linear-gradient(93.64deg, #8826de 2.99%, #32005f 110.75%)",
       opacity: 0.5,
     },
     {
-      size: 950,
+      size: 1300,
       gradient: "linear-gradient(93.64deg, #6e00cf 2.99%, #32005f 110.75%)",
       opacity: 0.3,
     },
